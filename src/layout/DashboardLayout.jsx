@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Sidebar from "../components/dashboard/Sidebar";
 import Header from "../components/dashboard/Header";
+import { Outlet } from "react-router-dom";
 
 const DashboardLayout = ({ children }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -25,7 +26,9 @@ const DashboardLayout = ({ children }) => {
 
       <div className="flex-1 flex flex-col">
         <Header onToggleSidebar={() => setSidebarOpen(!sidebarOpen)} />
-        <main className="p-4">{children}</main>
+        <main className="p-4">
+          <Outlet />
+        </main>
       </div>
     </div>
   );

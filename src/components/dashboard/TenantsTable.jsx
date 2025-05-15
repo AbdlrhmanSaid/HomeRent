@@ -1,5 +1,7 @@
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const tenants = [
   {
@@ -26,7 +28,14 @@ const TenantsTable = () => {
   return (
     <Card>
       <CardContent className="p-6">
-        <h3 className="text-lg font-bold mb-4">قائمة المستأجرين</h3>
+        <div className="header flex justify-between items-center mb-4">
+          <Link to="/dashboard/add-tenant">
+            <Button variant="outline" className="cursor-pointer mb-4">
+              إضافة مستأجر جديد
+            </Button>
+          </Link>
+          <h3 className="text-lg font-bold mb-4">قائمة المستأجرين</h3>
+        </div>
         <table className="w-full text-right border">
           <thead className="bg-gray-100">
             <tr>
