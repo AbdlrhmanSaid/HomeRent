@@ -12,12 +12,12 @@ const DashboardLayout = ({ children }) => {
       </div>
 
       {sidebarOpen && (
-        <div className="fixed inset-0 z-40 flex md:hidden duration-75">
+        <div className="fixed inset-0 z-40 flex md:hidden">
           <div
-            className="fixed inset-0 bg-black opacity-50"
+            className="fixed inset-0 bg-black opacity-50 bg-opacity-50 transition-opacity duration-200"
             onClick={() => setSidebarOpen(false)}
           />
-          <div className="relative z-50 w-64 bg-white shadow-md">
+          <div className="relative z-50 w-64 bg-white shadow-md transform transition-transform duration-300 translate-x-0">
             <Sidebar />
           </div>
         </div>
