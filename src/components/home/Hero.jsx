@@ -5,7 +5,7 @@ const Hero = () => {
   return (
     <section className="bg-gray-50">
       <div className="mx-auto max-w-screen-xl px-4 py-20 lg:flex lg:items-center lg:justify-between">
-        <div className="max-w-2xl text-center lg:text-left">
+        <div className="max-w-2xl text-center ">
           <h1 className="text-4xl font-extrabold text-gray-900 sm:text-5xl">
             اجعل حياتك الإيجارية أسهل مع
             <span className="block text-teal-600 mt-2">HomeRent.</span>
@@ -15,7 +15,7 @@ const Hero = () => {
             أدر مستأجريك وعقاراتك الإيجارية بسهولة وفعالية. كل شيء في مكان واحد.
           </p>
 
-          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center ">
             <Link
               to="/login"
               className="inline-block rounded-md bg-teal-600 px-8 py-3 text-sm font-medium text-white hover:bg-teal-700"

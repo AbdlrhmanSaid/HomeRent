@@ -1,14 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import Sidebar from "../components/dashboard/Sidebar";
 import Header from "../components/dashboard/Header";
 
 const DashboardLayout = ({ children }) => {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
   return (
-    <div className="flex">
-      <Sidebar />
-      <div className="flex-1">
-        <Header />
-        <main className="p-6 bg-gray-50 min-h-screen">{children}</main>
+    <div className="flex text-right min-h-screen bg-gray-50">
+      <div className="hidden md:block">
+        <Sidebar />
+      </div>
+
+      {sidebarOpen && (
+        <div className="fixed inset-0 z-40 flex md:hidden duration-75">
+          <div
+            className="fixed inset-0 bg-black opacity-50"
+            onClick={() => setSidebarOpen(false)}
+          />
+          <div className="relative z-50 w-64 bg-white shadow-md">
+            <Sidebar />
+          </div>
+        </div>
+      )}
+
+      <div className="flex-1 flex flex-col">
+        <Header onToggleSidebar={() => setSidebarOpen(!sidebarOpen)} />
+        <main className="p-4">{children}</main>
       </div>
     </div>
   );
